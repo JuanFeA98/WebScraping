@@ -4,8 +4,7 @@ from selenium import webdriver
 
 class HelloWorld(unittest.TestCase):
 
-    # @classmethod
-    def setUpClass(self):
+    def setUp(self):
         self.driver =webdriver.Chrome(executable_path=r'C:/Users/jmart/Downloads/chromedriver.exe')
         driver = self.driver
         driver.implicitly_wait(10)
@@ -13,9 +12,8 @@ class HelloWorld(unittest.TestCase):
 
     def test_hello_world(self): 
         driver = self.driver
-        driver.get('https://www.google.com')
+        driver.get('https://www.truecaller.com')
 
-    # @classmethod
     def tearDown(self):
         self.driver.quit()
         return super().tearDown()
